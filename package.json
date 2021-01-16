@@ -1,0 +1,36 @@
+{
+  "name": "gitpod-js",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "htmlhint": "htmlhint src/*.html test/*.html",
+    "eslint": "eslint --ext .js src/ test/",
+    "pretest": "npm run eslint && npm run htmlhint",
+    "test-browser": "opener ./test/index.html",
+    "test-node": "nyc mocha ./test/headless.js && nyc report --reporter=html",
+    "test": "npm run test-node && npm run test-browser",
+    "dev": "node src/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FiorellaEffio/gitpod-js.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/FiorellaEffio/gitpod-js/issues"
+  },
+  "homepage": "https://github.com/FiorellaEffio/gitpod-js#readme",
+  "dependencies": {
+    "chai": "^4.2.0",
+    "eslint": "^7.17.0",
+    "express": "^4.17.1",
+    "htmlhint": "^0.14.2",
+    "mocha": "^8.2.1",
+    "nodemon": "^2.0.7",
+    "nyc": "^15.1.0",
+    "opener": "^1.5.2"
+  }
+}
