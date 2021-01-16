@@ -1,13 +1,14 @@
 describe('data', () => {
 
-  it('deberia ser falso', () => {
-    assert.isFunction(()=> {});
+  it('should be a function', () => {
+    assert.isFunction(window.testError);
+    
   });
 
-  describe('processCohortData({ cohortData, orderBy, orderDirection, filterBy })', () => {
+  const currentValue = window.testError('test');
 
-    it('debería retornar arreglo de usuarios');
-
+  it('should be false', () => {
+    assert.equal(currentValue, false);
   });
 
 });
